@@ -18,7 +18,7 @@ ul {
 
 a {
     text-decoration: none;
-    color: #333;
+    color: #fff;
 }
 
 h1,
@@ -34,4 +34,49 @@ p {
 
 img {
     width: 100%;
+}
+
+.navbar {
+    background-color: #047aed;
+    color: #fff;
+    height: 70px;
+}
+
+.navbar .flex {
+    justify-content: space-between;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar a {
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.navbar a:hover {
+    border-bottom: 2px #fff solid;
+}
+
+.container {
+    /* max-width makes sure that the size of the container is never larger
+    than 1100px. Similarly, min-width makes sure that the size of the 
+    container is never less than abc pixels.
+    The container stays in the center because the margin is auto from x-axis. 
+    So, when we open the page on a large screen 1100px are left from both 
+    side of x-axis.*/
+    max-width: 1100px;
+    margin: 0 auto;
+    /* h1 and h2 elements have margin of 10px in y-axis. This leads to some 
+    overflow in y-axis. overflow: auto take care of it. */
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
