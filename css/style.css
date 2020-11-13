@@ -18,21 +18,28 @@ ul {
 
 a {
     text-decoration: none;
-    color: #fff;
+    color: #333;
 }
 
 h1,
 h2 {
     font-weight: 300;
+    /* Well most of the text will have line-height of 1.6. But for h1 and h2
+    elements if they don't fit into one line then the line spacing between 
+    the lines should be 1.2 instead of 1.6 */
     line-height: 1.2;
+    /* margin of 10px in y-axis makes sure there is enough space between 
+    two h1 or h2 elements */
     margin: 10px 0;
 }
 
 p {
+    /* Adds spacing between two para */
     margin: 10px 0;
 }
 
 img {
+    /* Makes sure images takes the entire width */
     width: 100%;
 }
 
@@ -53,6 +60,7 @@ img {
 .navbar a {
     padding: 10px;
     margin: 0 5px;
+    color: #fff;
 }
 
 .navbar a:hover {
