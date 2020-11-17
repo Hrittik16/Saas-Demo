@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
+:root {
+    /* This is a css variable. Root means targeting the entire html */
+    /* Syntax: --VariableName */
+    --primary-color: #047aed;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -43,8 +49,10 @@ img {
     width: 100%;
 }
 
+/* Navbar Starts */
+
 .navbar {
-    background-color: #047aed;
+    background-color: var(--primary-color);
     color: #fff;
     height: 70px;
 }
@@ -67,6 +75,68 @@ img {
     border-bottom: 2px #fff solid;
 }
 
+/* Navbar Ends */
+
+
+
+/* Showcase */
+
+.showcase {
+    height: 400px;
+    background-color: var(--primary-color);
+    color: #fff;
+    position: relative;
+}
+
+.showcase h1 {
+    font-size: 40px;
+}
+
+.showcase p {
+    margin: 20px 0;
+}
+
+.showcase .grid {
+    /* overflow: visible makes sure when the card height crosses that of showcase it is visible */
+    overflow: visible;
+    grid-template-columns: 55% 45%;
+    gap: 30px;
+}
+
+.showcase-form {
+    position: relative;
+    top: 60px;
+    height: 350px;
+    width: 400px;
+    padding: 40px;
+    z-index: 100;
+    justify-self: flex-end;
+}
+
+.showcase-form .form-control {
+    margin: 30px 0;
+}
+
+.showcase-form input[type='text'],
+.showcase-form input[type='email'] {
+    border: 0;
+    border-bottom: 1px solid #b4becb;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+
+/* When we click on name or email it doesn't show any external border */
+.showcase-form input:focus {
+    outline: none;
+}
+
+/* Showcase ends */
+
+
+
+/* Utilities (def: used all around the website) */
+
 .container {
     /* max-width makes sure that the size of the container is never larger
     than 1100px. Similarly, min-width makes sure that the size of the 
@@ -82,9 +152,58 @@ img {
     padding: 0 40px;
 }
 
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    /* box-shadow: horizontal-offset vertical-offset blurr color */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    /* A positive horizontal-offset puts shadow on right side of the box */
+    /* A negative horizontal-offset puts shadow on left side of the box */
+    /* For vertical-offset a positive value puts the shadow below the 
+    box, a negative value puts the shadow above the box */
+    /* For the blur value the higher the number, the more blurred the shadow will be */
+    padding: 20px;
+    margin: 10px;
+    color: #333;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    cursor: pointer;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px #fff solid;
+}
+
+.btn:hover {
+    /* 1 is the default for scale. So 0.98 scales it down */
+    transform: scale(0.98);
+}
+
 .flex {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
 }
+
+.grid {
+    display: grid;
+    /* fr means fraction of the entire space. We can also use repeat(2, 1fr)*/
+    grid-template-columns: 1fr 1fr;
+    /* gap adds gap between the grid elements. It removes the need to add margin */
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    /* We have a height for .showcase but not for .grid. So, we need the grid to be 100% of .showcase*/
+    height: 100%;
+}
+
+/* Utilities Ends */
