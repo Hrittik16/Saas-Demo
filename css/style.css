@@ -245,4 +245,9 @@ img {
         padding: 10px;
         background-color: rgba(0, 0, 0, 0.1);
     }
+
+    .showcase-form,
+    .showcase-text {
+        width: 100%;
+    }
 }
